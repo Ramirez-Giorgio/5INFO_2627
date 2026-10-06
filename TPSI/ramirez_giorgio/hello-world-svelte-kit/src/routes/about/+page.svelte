@@ -11,7 +11,7 @@
 	<h1>About this app</h1>
 
 	<p>
-		Ciao io sono <a href="https://svelte.dev/docs/kit">Antonio Mancuso</a> e insegno informatica ai ragazzi dell'Agnelli
+		Ciao io sono <a color="red">Antonio Mancuso</a> e insegno informatica ai ragazzi dell'Agnelli
 	</p>
 	<p>
 		il mio blog si trova qui
