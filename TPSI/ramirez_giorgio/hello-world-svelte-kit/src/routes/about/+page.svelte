@@ -1,5 +1,7 @@
 <script>
 	import { resolve } from '$app/paths';
+	import Banner from '../../lib/components/banner.svelte';
+
 </script>
 
 <svelte:head>
@@ -8,8 +10,8 @@
 </svelte:head>
 
 <div class="text-column">
-	<h1>About this app</h1>
-
+	<h1>About Me!!</h1>
+	<Banner />
 	<p>
 		Ciao io sono <a color="red">Antonio Mancuso</a> e insegno informatica ai ragazzi dell'Agnelli
 	</p>
