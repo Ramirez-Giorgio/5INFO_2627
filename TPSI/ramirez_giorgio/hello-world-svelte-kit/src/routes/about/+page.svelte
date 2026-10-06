@@ -11,11 +11,14 @@
 	<h1>About this app</h1>
 
 	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
+		Ciao io sono <a href="https://svelte.dev/docs/kit">Antonio Mancuso</a> e insegno informatica ai ragazzi dell'Agnelli
+	</p>
+	<p>
+		il mio blog si trova qui
 	</p>
 
-	<pre>npx sv create</pre>
+
+	<pre>https://profmancusoa.github.io/</pre>
 
 	<p>
 		The page you're looking at is purely static HTML, with no client-side interactivity needed.
