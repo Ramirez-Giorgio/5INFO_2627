@@ -1,4 +1,8 @@
-<h1> My name is John Doe!</h1>
+<script>
+    let name = 'Giorgio Ramirez'
+</script>
+
+<h1> My name is {name}!</h1>
 
 <style>
     h1 {
