@@ -4,12 +4,14 @@
 </svelte:head>
 
 <script>
-    export let counter = 0;
+    export let counter=0
+    function incr(){counter+= 1}
+    function dec(){counter-= 1}
 </script>
 
 <div class="container">
     <div class="pulsante">
-        <button>
+        <button on:click={dec}>
             <span class="material-symbols-outlined icon">remove</span>
         </button>
     </div>
@@ -19,7 +21,7 @@
     </div>
     
     <div class="pulsante">
-        <button>
+        <button on:click={incr}>
             <span class="material-symbols-outlined icon">add</span>
         </button>
     </div>
