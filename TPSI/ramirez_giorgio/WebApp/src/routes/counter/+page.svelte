@@ -4,29 +4,24 @@
     let cont=0
     let cont1=0
     let numeri = [1,7,2,6,9,10]
+    let sottolineato = true
+    let doppio = 0
+    $: {
+        doppio =cont*2;
+        sottolineato = cont==7?false:true
+    }
+
 </script>
 
 <h1>
 Pagina Counter!!!
 </h1>
 
-{#if cont<5}
-<h2 class="rosso">Il valore del contatore vale : {cont}</h2>
-{:else if cont >10}
-<h2 class="arancione">Il valore del contatore vale : {cont}</h2>
-{:else}
-<h2 class="verde">Il valore del contatore vale : {cont}</h2>
-{/if}
+<h2 class:sottolineato>Il valore del contatore vale : {cont}</h2>
+<h2>il suo doppio vale {doppio}</h2>
 <Counter bind:counter={cont}/>
 
-
-{#if cont1<5}
-<h2 class="rosso">Il valore del contatore vale : {cont1}</h2>
-{:else if cont1 >10}
-<h2 class="arancione">Il valore del contatore vale : {cont1}</h2>
-{:else}
-<h2 class="verde">Il valore del contatore vale : {cont1}</h2>
-{/if}
+<h2 class={cont1<5?'rosso':'verde'}>Il valore del contatore vale : {cont1}</h2>
 <DoubleCounter bind:counter={cont1}/>
 
 <ul>
@@ -36,7 +31,7 @@ Pagina Counter!!!
 </ul>
 
 <style>
-    .arancione{color: peru;}
     .rosso{color: red;}
     .verde{color: green;}
+    .sottolineato{text-decoration: underline;}
 </style>
