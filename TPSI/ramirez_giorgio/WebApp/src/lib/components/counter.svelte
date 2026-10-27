@@ -5,31 +5,32 @@
 
 <script>
     import {createEventDispatcher} from 'svelte'
-    const dispatch = createEventDispatcher();
-    export let counter=0
-    function incr(){counter+= 1}
-    function dec(){counter-= 1}
-
+    import {store_counter} from '../js/store.js'
     
-    function counter_incr() {
+    const dispatch = createEventDispatcher();
+        
+    export let counter=0
+    
+    function counter_inc() {
     counter += 1;
-    emit_event('incr');
+    $store_counter = counter
+    dispatch('contatore',{
+        tipo:'incremento',
+        valore:counter
+    })
     }
     function counter_decr() {
     counter -= 1;
-    emit_event('dec');
-    }
-    function emit_event(tipo) {
-    dispatch('contatore', {
-    tipo: tipo,
-    valore: counter
-    });
-    }
+    $store_counter = counter
+    dispatch('contatore',{
+        tipo:'decremento',
+        valore:counter
+    })    }
 </script>
 
 <div class="container">
     <div class="pulsante">
-        <button on:click={dec}>
+        <button on:click={counter_decr}>
             <span class="material-symbols-outlined icon">remove</span>
         </button>
     </div>
@@ -39,7 +40,7 @@
     </div>
     
     <div class="pulsante">
-        <button on:click={incr}>
+        <button on:click={counter_inc}>
             <span class="material-symbols-outlined icon">add</span>
         </button>
     </div>
