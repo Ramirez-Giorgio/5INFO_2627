@@ -11,11 +11,17 @@
         sottolineato = cont==7?false:true
     }
 
+    function gestisci_evento(evento){
+        alert(`${evento.detail.tipo} -- ${evento.detail.valore}`)
+    }
 </script>
 
 <h1>
 Pagina Counter!!!
 </h1>
+
+<h2>il valore del contatore vale : {cont}</h2>
+<Counter bind:counter={cont} on:contatore={gestisci_evento}/>
 
 <h2 class:sottolineato>Il valore del contatore vale : {cont}</h2>
 <h2>il suo doppio vale {doppio}</h2>
