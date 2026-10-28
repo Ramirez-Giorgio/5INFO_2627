@@ -17,18 +17,10 @@
         border-bottom: 1px solid #f0f0f0;
         font-size: 1rem;
         color: #333;
-        font-family: Arial, sans-serif;
-        cursor: pointer;
-        transition: background-color 0.2s ease, padding-left 0.2s ease;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .item-btn:last-child {
         border-bottom: none;
-    }
-
-    .item-btn:hover {
-        background-color: #f9f9f9;
-        color: #ff0000;
-        padding-left: 24px; 
     }
 </style>

@@ -1,7 +1,11 @@
 <script>
-    export let nome = "Menu";
-    export let isOpen = false;
-    export let onToggle = () => {};
+    import Item from './item.svelte'; 
+
+    export let nome = "Menu"
+    export let isOpen = false
+    export let items = []
+    export let onToggle = () => {}
+    export let onSelect = (valore) => {}
 </script>
 
 <div class="dropdown-wrapper">
@@ -14,15 +18,18 @@
     
     {#if isOpen}
         <div class="dropdown-list">
-            <slot />
+            {#each items as item}
+                <Item value={item} on:click={() => onSelect(item)} />
+            {/each}
         </div>
     {/if}
 </div>
 
 <style>
     .nome {
-            font-family: Times New Roman, Times, serif;
+        font-family: Times New Roman, Times, serif;
     }
+    
     .dropdown-wrapper {
         width: 320px;
         margin-bottom: 25px;
@@ -41,10 +48,6 @@
         justify-content: center;
         align-items: center;
         position: relative;
-    }
-
-    .dropdown-btn:hover {
-        background-color: #e60000;
     }
 
     .freccia {

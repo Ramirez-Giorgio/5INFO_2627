@@ -1,22 +1,22 @@
 <script>
     import Dropdown from '../lib/components/dropdown.svelte';
-    import Item from '../lib/components/item.svelte';
 
     let drop = null;
-    let doppioclick = null;
-    let messagge = "";
+    let doppioclick = { Regione: null, Città: null, Nazione: null };
+    let messagge = { Regione: "", Città: "", Nazione: "" };
 
-    const handleToggle = (id) => {
+    const Tendina = (id) => {
         drop = drop === id ? null : id;
     };
 
-    const handleSelect = (item, nomeBlocco) => {
-        if (doppioclick === item) {
-            messagge = `hai selezionato la ${nomeBlocco} : ${item}`;
+    const Selezione = (item, nomeBlocco) => {
+        if (doppioclick[nomeBlocco] === item) {
+            messagge[nomeBlocco] = `hai selezionato la ${nomeBlocco} : ${item}`;
         } else {
-            doppioclick = item;
-            messagge = ""; 
+            doppioclick[nomeBlocco] = item;
+            messagge[nomeBlocco] = ""; 
         }
+        messagge = { ...messagge };
     };
 
     const regioni = ['Piemonte', 'Lombardia', 'Lazio', 'Campania'];
@@ -26,33 +26,39 @@
 
 <h1>DROP DOWN TESTER</h1>
 
-<Dropdown nome="Regione" isOpen={drop === 'regioni'} onToggle={() => handleToggle('regioni')}>
-    {#each regioni as regione}
-        <Item value={regione} on:click={() => handleSelect(regione, 'Regione')} />
-    {/each}
-</Dropdown>
-
-<Dropdown nome="Città" isOpen={drop === 'citta'} onToggle={() => handleToggle('citta')}>
-    {#each citta as c}
-        <Item value={c} on:click={() => handleSelect(c, 'Città')} />
-    {/each}
-</Dropdown>
+<Dropdown 
+    nome="Regione" 
+    isOpen={drop === 'regioni'} 
+    items={regioni}
+    onToggle={() => Tendina('regioni')}
+    onSelect={(valore) => Selezione(valore, 'Regione')}
+/>
 
 <Dropdown 
-    nome="Nazione" isOpen={drop === 'nazioni'} onToggle={() => handleToggle('nazioni')}>
-    {#each nazioni as nazione}
-        <Item value={nazione} on:click={() => handleSelect(nazione, 'Nazione')} />
+    nome="Città" 
+    isOpen={drop === 'citta'} 
+    items={citta}
+    onToggle={() => Tendina('citta')}
+    onSelect={(valore) => Selezione(valore, 'Città')}
+/>
+
+<Dropdown 
+    nome="Nazione" 
+    isOpen={drop === 'nazioni'} 
+    items={nazioni}
+    onToggle={() => Tendina('nazioni')}
+    onSelect={(valore) => Selezione(valore, 'Nazione')}
+/>
+
+<div class="messaggio">
+    {#each Object.values(messagge) as msg}
+        {#if msg !== ""}
+            <h2>
+                <b>{msg}</b>
+            </h2>
+        {/if}
     {/each}
-</Dropdown>
-
-{#if messagge}
-    <div class="messaggio">
-        <h2>
-            <b>{messagge}</b>
-        </h2>
-    </div>
-{/if}
-
+</div>
 
 <style>
     h1 {
@@ -68,4 +74,7 @@
         font-size: 1.2rem;
     }
 
+    h2 {
+        margin: 0.5rem 0;
+    }
 </style>
