@@ -2,7 +2,6 @@
     export let value = "";
 </script>
 
-<!-- usiamo "on:click" per forwardare l'evento al parent -->
 <button class="item-btn" on:click>
     {value}
 </button>
@@ -30,6 +29,6 @@
     .item-btn:hover {
         background-color: #f9f9f9;
         color: #ff0000;
-        padding-left: 24px; /* Piccolo effetto estetico extra */
+        padding-left: 24px; 
     }
 </style>
