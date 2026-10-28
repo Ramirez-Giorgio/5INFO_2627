@@ -7,7 +7,6 @@
 <div class="dropdown-wrapper">
     <button class="dropdown-btn" on:click={onToggle}>
         <span class="nome">{nome}</span>
-        
         <span class="freccia">
             ▼
         </span>
@@ -21,10 +20,12 @@
 </div>
 
 <style>
+    .nome {
+            font-family: Times New Roman, Times, serif;
+    }
     .dropdown-wrapper {
         width: 320px;
         margin-bottom: 25px;
-        font-family: Arial, sans-serif;
     }
 
     .dropdown-btn {
@@ -57,7 +58,6 @@
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         margin-top: 8px;
         overflow: hidden;
     }

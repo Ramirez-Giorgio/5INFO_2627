@@ -26,31 +26,20 @@
 
 <h1>DROP DOWN TESTER</h1>
 
-<Dropdown 
-    nome="Regione" 
-    isOpen={drop === 'regioni'} 
-    onToggle={() => handleToggle('regioni')}
->
+<Dropdown nome="Regione" isOpen={drop === 'regioni'} onToggle={() => handleToggle('regioni')}>
     {#each regioni as regione}
         <Item value={regione} on:click={() => handleSelect(regione, 'Regione')} />
     {/each}
 </Dropdown>
 
-<Dropdown 
-    nome="Città" 
-    isOpen={drop === 'citta'} 
-    onToggle={() => handleToggle('citta')}
->
+<Dropdown nome="Città" isOpen={drop === 'citta'} onToggle={() => handleToggle('citta')}>
     {#each citta as c}
         <Item value={c} on:click={() => handleSelect(c, 'Città')} />
     {/each}
 </Dropdown>
 
 <Dropdown 
-    nome="Nazione" 
-    isOpen={drop === 'nazioni'} 
-    onToggle={() => handleToggle('nazioni')}
->
+    nome="Nazione" isOpen={drop === 'nazioni'} onToggle={() => handleToggle('nazioni')}>
     {#each nazioni as nazione}
         <Item value={nazione} on:click={() => handleSelect(nazione, 'Nazione')} />
     {/each}
