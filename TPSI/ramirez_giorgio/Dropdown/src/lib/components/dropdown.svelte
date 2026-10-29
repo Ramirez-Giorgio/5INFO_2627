@@ -2,7 +2,7 @@
     import Item from './item.svelte'; 
 
     export let nome = "Menu"
-    export let isOpen = false
+    export let Aperto = false
     export let items = []
     export let onToggle = () => {}
     export let onSelect = (valore) => {}
@@ -16,7 +16,7 @@
         </span>
     </button>
     
-    {#if isOpen}
+    {#if Aperto}
         <div class="dropdown-list">
             {#each items as item}
                 <Item value={item} on:click={() => onSelect(item)} />

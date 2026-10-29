@@ -6,7 +6,7 @@
     let messagge = { Regione: "", Città: "", Nazione: "" };
 
     const Tendina = (id) => {
-        drop = drop === id ? null : id;
+        drop = drop === id ? null : id
     };
 
     const Selezione = (item, nomeBlocco) => {
@@ -16,19 +16,19 @@
             doppioclick[nomeBlocco] = item;
             messagge[nomeBlocco] = ""; 
         }
-        messagge = { ...messagge };
+        messagge = { ...messagge }
     };
 
-    const regioni = ['Piemonte', 'Lombardia', 'Lazio', 'Campania'];
-    const citta = ['Torino', 'Milano', 'Roma', 'Napoli'];
-    const nazioni = ['Italia', 'Spagna', 'Francia', 'Germania'];
+    const regioni = ['Piemonte', 'Lombardia', 'Lazio', 'Campania']
+    const citta = ['Torino', 'Milano', 'Roma', 'Napoli']
+    const nazioni = ['Italia', 'Spagna', 'Francia', 'Germania']
 </script>
 
 <h1>DROP DOWN TESTER</h1>
 
 <Dropdown 
     nome="Regione" 
-    isOpen={drop === 'regioni'} 
+    Aperto={drop === 'regioni'} 
     items={regioni}
     onToggle={() => Tendina('regioni')}
     onSelect={(valore) => Selezione(valore, 'Regione')}
@@ -36,7 +36,7 @@
 
 <Dropdown 
     nome="Città" 
-    isOpen={drop === 'citta'} 
+    Aperto={drop === 'citta'} 
     items={citta}
     onToggle={() => Tendina('citta')}
     onSelect={(valore) => Selezione(valore, 'Città')}
@@ -44,7 +44,7 @@
 
 <Dropdown 
     nome="Nazione" 
-    isOpen={drop === 'nazioni'} 
+    Aperto={drop === 'nazioni'} 
     items={nazioni}
     onToggle={() => Tendina('nazioni')}
     onSelect={(valore) => Selezione(valore, 'Nazione')}

@@ -12,9 +12,8 @@
         width: 100%;
         padding: 12px 20px;
         text-align: left;
-        background: none;
         border: none;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid
         font-size: 1rem;
         color: #333;
         font-family: 'Times New Roman', Times, serif;
